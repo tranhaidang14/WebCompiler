@@ -24,7 +24,7 @@
     <ProjectGuid>{4645f475-51c6-408a-90c1-3fae08401966}</ProjectGuid>
     <RootNamespace>HTMLParser</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>HTML CSS Parser</ProjectName>
+    <ProjectName>WebParser</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,9 +128,11 @@
   <ItemGroup>
     <ClCompile Include="css_parser.cpp" />
     <ClCompile Include="html_parser.cpp" />
+    <ClCompile Include="query_selector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="css_parser.h" />
+    <ClInclude Include="query_selector.h" />
     <ClInclude Include="html_parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
