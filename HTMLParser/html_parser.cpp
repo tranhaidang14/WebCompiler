@@ -31,12 +31,8 @@ static void ltrim(std::string& s) {
 		s = s.substr(i);
 	}
 }
-/*
-* *******************
-* * HTML ATTRIBUTES *
-* *******************
-*/
 
+#pragma region attribute
 HTML_Attributes::HTML_Attributes(string raw) {
 	if (raw.empty()) return;
 	std::cout << "Parsing Attribute: " << raw << "\n";
@@ -131,12 +127,10 @@ bool HTML_Attributes::remove_attribute(string key) {
 	attributes.erase(key);
 	return true;
 };
-/*
-* *************
-* * HTML NODE *
-* *************
-*/
 
+#pragma endregion
+
+#pragma region node
 bool HTML_Node::add_child(std::shared_ptr<HTML_Node> child) {
 	childrens.push_back(child);
 	return true;
@@ -167,13 +161,9 @@ void HTML_Node::push_all_children_to_queue(std::queue<std::shared_ptr<HTML_Node>
 		if (!direct) child->push_all_children_to_queue(q);
 	}
 }
+#pragma endregion
 
-/*
-* *******************
-* * HTML PARSE TREE *
-* *******************
-*/
-
+#pragma region parse_tree
 HTML_NodeList HTML_ParseTree::query(string query_selector) const {
 	HTML_NodeList result;
 	QuerySelector query(query_selector);
@@ -189,13 +179,9 @@ void HTML_ParseTree::traverse_query(string query_selector, std::function<void(st
 		cb(node);
 	}
 }
+#pragma endregion
 
-/*
-* ***************
-* * HTML PARSER *
-* ***************
-*/
-
+#pragma region parser
 namespace HTMLParser {
 	std::queue<HTML_Token> tokenize(string html_content) {
 		std::queue<HTML_Token> tokens;
@@ -364,3 +350,5 @@ namespace HTMLParser {
 		return HTML_Error;
 	}
 };
+
+#pragma endregion
