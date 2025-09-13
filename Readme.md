@@ -1,8 +1,11 @@
 # Read the headers file!!
 # Open for pull requests
 
+# About this project:
+A compiler that take HTML, CSS and C++ code to make a window(maybe other OS) application.
+
 # First words
-I'm a no-experience developer(or actually I'm just a high school student that dream high), so in this project should be plenty of mistake and wrong things that I couldn't see yet. So if you spent your time here, please give me some issues to fix and improve.
+I'm a no-experience developer(or actually just a high school student that dream high), so in this project should be plenty of mistake and wrong things that I couldn't see yet. So if you spent your time here, please give me some issues to fix and improve.
 # Plan:
 ### HTML Parser: I think it's good enough
 ### CSS Parser: Currently working on
