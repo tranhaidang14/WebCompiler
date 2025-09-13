@@ -21,12 +21,18 @@
     <ClCompile Include="css_parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="query_selector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="html_parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="css_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="query_selector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
