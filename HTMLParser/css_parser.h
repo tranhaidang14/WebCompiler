@@ -9,14 +9,14 @@ class QuerySelector;
 using std::string;
 
 struct CSS_Except {
-	int line, code;
-	string message;
+	int line = 0, code = 0;
+	string message = "";
 };
 
 static CSS_Except CSS_Error;
 
 const int CSS_OK = 0x0;
-
+const int CSS_SYNTAX_ERROR = 0x1;
 /*
 * **********
 * * Styles *
@@ -53,13 +53,13 @@ struct Styles {
 
 // represent a css file/tag content
 class CSS {
-	std::unordered_map<QuerySelector, Styles> css;
+	std::unordered_map<string, Styles> css;
 	
 public:
 	void loopthrough(std::function<void(QuerySelector, Styles)> cb);
 };
 
-namespace CSS_Parser {
+namespace CSSParser {
 	CSS parse(string raw);
 	CSS_Except getError();
 }

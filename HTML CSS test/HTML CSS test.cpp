@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 #include "../HTMLParser/html_parser.h"
+#include "../HTMLParser/css_parser.h"
 
 #include <string>
 #include <iostream>
@@ -69,6 +70,16 @@ namespace HTMLCSStest
 
 			Assert::AreEqual("en", html->attributes.get_attribute("lang").c_str());
 			Assert::AreEqual("true", img->attributes.get_attribute("lazy_load").c_str());
+		}
+	
+	
+		TEST_METHOD(CSS_Test1_PerfectCode) {
+			std::string css =
+				".a .b > div {\n"
+				"color: blue;\n"
+				"};";
+
+			CSS parsed = CSSParser::parse(css);
 		}
 	};
 }

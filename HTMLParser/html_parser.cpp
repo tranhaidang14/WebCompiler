@@ -35,7 +35,6 @@ static void ltrim(std::string& s) {
 #pragma region attribute
 HTML_Attributes::HTML_Attributes(string raw) {
 	if (raw.empty()) return;
-	std::cout << "Parsing Attribute: " << raw << "\n";
 	ltrim(raw);
 	std::vector<string> tokens;
 	
@@ -51,7 +50,6 @@ HTML_Attributes::HTML_Attributes(string raw) {
 			}
 
 			if (token.empty()) {
-				std::cout << ch << " ";
 				HTML_Error = { 0, ATTRIBUTE_ERROR, string("Syntax error in attributes: ") + raw};
 				return;
 			}
@@ -111,7 +109,6 @@ HTML_Attributes::HTML_Attributes(string raw) {
 }
 
 bool HTML_Attributes::set_attribute(string key, string value) {
-	std::cout << key << "=" << value;
 	attributes[key] = value;
 	return true;
 };
